@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Empleados</title>
+</head>
+<body>
+    <h1>Listado de Empleados</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>IdEmpleado</th>
+                <th>Apellidos</th>
+                <th>Nombres</th>
+                <th>Edad</th>
+                <th>Sexo</th>
+                <th>Salario</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Iterar sobre la lista de empleados y mostrarlos -->
+            <th:block th:each="empleado : ${empleados}">
+                <tr>
+                    <td th:text="${empleado.idEmpleado}"></td>
+                    <td th:text="${empleado.apellidos}"></td>
+                    <td th:text="${empleado.nombres}"></td>
+                    <td th:text="${empleado.edad}"></td>
+                    <td th:text="${empleado.sexo}"></td>
+                    <td th:text="${empleado.salario}"></td>
+                </tr>
+            </th:block>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="6">Total de Registros: <span th:text="${empleados.size()}"></span></td>
+            </tr>
+            <tr>
+                <td colspan="6"><a href="/registrar-empleado">Registrar Empleado</a></td>
+            </tr>
+        </tfoot>
+
+    </table>
+    
+</body>
+</html>
